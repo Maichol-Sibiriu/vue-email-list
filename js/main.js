@@ -17,19 +17,23 @@ const js = new Vue({
 
        chuckEmail(){
 
-          axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-           .then( response => {
-            // handle success
-            console.log(response.data.response);
+          for (var i = 0; i < 10; i++) {
 
-            this.list.push(response.data.response);
-           })
-           .catch( error => {
-            // handle error
-            console.log(error);
-          })
+           axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then( response => {
+             // handle success
+             console.log(response.data.response);
 
-       }
+             this.list.push(response.data.response);
+            })
+            .catch( error => {
+             // handle error
+             console.log(error);
+            })
+
+          }
+
+        }
 
   },
 
